@@ -14,10 +14,6 @@ export const ButtonComponent: React.FC<
       >
         {children}
       </button>
-      {/* <button className="flex item-center gap-2 justify-center bg-transparent text-blue-500 hover:border-blue-600 hover:text-blue-600 font-bold px-3 py-4 rounded whitespace-nowrap border border-blue-500">
-        <Lightning size={24} weight="bold" />
-        ACESSE O DESAFIO
-      </button> */}
     </>
   );
 };

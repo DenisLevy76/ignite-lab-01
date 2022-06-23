@@ -12,10 +12,10 @@ export const ExtensionLinkComponent: React.FC<ExtensionLinkComponentProps> = ({
       href={href}
       className="flex items-center bg-grey-700 hover:bg-grey-600 rounded overflow-hidden cursor-pointer w-full justify-between"
     >
-      <div className="flex px-6 h-full bg-green-700 items-center justify-center">
+      <div className="flex px-6 h-full bg-green-500 items-center justify-center">
         {icon}
       </div>
-      <div className="flex flex-col gap-2 p-6">
+      <div className="flex flex-col gap-2 px-6 py-3">
         <strong className="font-bold text-2xl text-grey-100">{title}</strong>
         <p className="text-sm text-grey-200">{description}</p>
       </div>

@@ -8,7 +8,7 @@ export const AboutVideoComponent: React.FC<{
   data: GetLessonBySlugResponse;
 }> = ({ data }) => {
   return (
-    <article className="flex flex-col p-8 gap-20">
+    <article className="flex flex-col px-1 py-4 sm:p-8 gap-20">
       <section className="flex flex-col lg:flex-row gap-16 justify-between">
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl font-bold">{data.lesson.title}</h1>

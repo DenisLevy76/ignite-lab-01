@@ -1,6 +1,3 @@
-import "@vime/core/themes/default.css";
-import "@vime/core/themes/light.css";
-
 export const VideoComponent: React.FC<{ videoId: string }> = ({ videoId }) => {
   return (
     <div className="flex-1 h-[31.25rem] 2xl:h-[38.5rem]">

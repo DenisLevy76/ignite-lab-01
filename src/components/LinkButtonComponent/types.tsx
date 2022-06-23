@@ -5,7 +5,13 @@ export enum LinkButtonComponentVariants {
   OUTLINED = "outlined",
 }
 
+export enum LinkButtonComponentTypes {
+  NAVIGATION = "navigation",
+  EXTERNAL = "external",
+}
+
 export interface LinkButtonComponentProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  variant: "primary" | "outlined";
+  variant?: "primary" | "outlined";
+  type?: LinkButtonComponentTypes;
 }

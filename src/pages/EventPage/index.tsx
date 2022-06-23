@@ -1,13 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
-import { DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
 import { useParams } from "react-router-dom";
 import { AboutVideoComponent } from "../../components/AboutVideoComponent";
-import { ExtensionLinkComponent } from "../../components/ExtensionLinkComponent";
 import { FooterComponent } from "../../components/FooterComponent";
 import { HeaderComponent } from "../../components/HeaderComponent";
-import { LinkButtonComponent } from "../../components/LinkButtonComponent";
 import { SidebarComponent } from "../../components/SidebarComponent";
-import { TeacherInfoComponent } from "../../components/TeacherInfoComponent";
 import { VideoComponent } from "../../components/VideoComponent";
 import { EventPageURLParams, GetLessonBySlugResponse } from "./types";
 
