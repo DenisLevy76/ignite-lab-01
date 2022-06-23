@@ -3,7 +3,7 @@ export interface Lesson {
   title: string;
   availableAt: Date;
   slug: string;
-  lessonType: 'class' | 'live';
+  lessonType: "class" | "live";
 }
 
 export interface LessonRequestData {

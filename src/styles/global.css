@@ -6,3 +6,15 @@ body {
   @apply bg-grey-900 text-gray-100;
   -webkit-font-smoothing: antialiased;
 }
+
+body::-webkit-scrollbar {
+  @apply w-2;
+}
+
+body::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-grey-600 rounded border;
+}

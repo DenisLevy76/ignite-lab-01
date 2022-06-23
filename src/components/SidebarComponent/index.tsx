@@ -17,7 +17,7 @@ const GET_LESSONS_QUERY = gql`
 export const SidebarComponent: React.FC = () => {
   const { data } = useQuery<LessonRequestData>(GET_LESSONS_QUERY);
   return (
-    <aside className="w-[348px] bg-grey-700 p-6 border-l border-grey-600">
+    <aside className="hidden md:block min-w-[348px] bg-grey-700 p-6 border-l border-grey-600">
       <h3 className="font-bold text-2xl pb-6 border-b border-grey-600 mb-6 block">
         Cronograma de aulas
       </h3>

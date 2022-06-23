@@ -2,6 +2,7 @@ import { CheckCircle, Lock } from "phosphor-react";
 import { LessonComponentsProps } from "./types";
 import { format, isPast } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { Link } from "react-router-dom";
 
 export const LessonComponent: React.FC<LessonComponentsProps> = ({
   title,
@@ -17,10 +18,10 @@ export const LessonComponent: React.FC<LessonComponentsProps> = ({
 
   return (
     <article>
-      <a href="#" className="flex flex-col gap-2">
+      <Link to={`/event/lesson/${slug}`} className="flex flex-col gap-2 group">
         <p className="text-grey-300 text-base">{formattedDate}</p>
 
-        <div className="flex flex-col justify-center border border-grey-600 rounded p-4 gap-4">
+        <div className="flex flex-col justify-center border border-grey-600 rounded p-4 gap-4 group-hover:border-green-300 transition-colors">
           <header className="flex justify-between items-center">
             {isPast(availableAt) ? (
               <p className="text-sm text-blue-500 font-bold flex items-center gap-2">
@@ -37,10 +38,9 @@ export const LessonComponent: React.FC<LessonComponentsProps> = ({
               {type === "live" ? "AO VIVO" : "AULA PRÁTICA"}
             </span>
           </header>
-
           <strong className="text-grey-200 text-base font-bold">{title}</strong>
         </div>
-      </a>
+      </Link>
     </article>
   );
 };
