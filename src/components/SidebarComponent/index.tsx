@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
 import { LessonComponent } from "../LessonComponent";
 import { LessonRequestData } from "./types";
 
@@ -16,6 +17,7 @@ const GET_LESSONS_QUERY = gql`
 
 export const SidebarComponent: React.FC = () => {
   const { data } = useQuery<LessonRequestData>(GET_LESSONS_QUERY);
+  const { slug } = useParams();
   return (
     <aside className="hidden md:block min-w-[348px] bg-grey-700 p-6 border-l border-grey-600">
       <h3 className="font-bold text-2xl pb-6 border-b border-grey-600 mb-6 block">
@@ -30,6 +32,7 @@ export const SidebarComponent: React.FC = () => {
             slug={lesson.slug}
             type={lesson.lessonType}
             availableAt={new Date(lesson.availableAt)}
+            activeLesson={slug === lesson.slug}
           />
         ))}
       </section>
