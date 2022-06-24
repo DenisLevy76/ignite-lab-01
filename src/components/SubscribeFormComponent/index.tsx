@@ -42,7 +42,7 @@ export const SubscribeFormComponent: React.FC = () => {
   return (
     <form
       onSubmit={handleSubscribe}
-      className="flex flex-col p-6 sm:p-8 bg-grey-700 border border-grey-500 min-w-[24.43rem]"
+      className="flex flex-col p-6 sm:p-8 bg-grey-700 border border-grey-500 md:min-w-[24.43rem]"
     >
       <h2 className="text-2xl font-bold">Inscreva-se gratuitamente</h2>
 
