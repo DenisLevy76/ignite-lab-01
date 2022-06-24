@@ -3,6 +3,8 @@ import { LessonComponentsProps } from "./types";
 import { format, isPast } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { Link } from "react-router-dom";
+import { classNames } from "../../utils/classNames";
+import { LESSON } from "../../settings/ptbr/Lesson";
 
 export const LessonComponent: React.FC<LessonComponentsProps> = ({
   title,
@@ -30,28 +32,31 @@ export const LessonComponent: React.FC<LessonComponentsProps> = ({
       <p className="text-grey-300 text-base">{formattedDate}</p>
 
       <div
-        className={`flex flex-col justify-center border border-grey-600 rounded p-4 gap-4 group-hover:border-green-300 ${
+        className={classNames(
+          "flex flex-col justify-center border border-grey-600 rounded p-4 gap-4 group-hover:border-green-300",
           activeLesson ? "bg-green-500" : ""
-        }`}
+        )}
       >
         <header className="flex justify-between items-center">
           {isPast(availableAt) ? (
             <p
-              className={`text-sm font-bold flex items-center gap-2 ${
+              className={classNames(
+                "text-sm font-bold flex items-center gap-2",
                 activeLesson ? "text-white" : "text-blue-500"
-              }`}
+              )}
             >
               <CheckCircle size={20} weight="bold" />
-              Conteúdo liberado
+              {LESSON.availableLesson}
             </p>
           ) : (
             <p
-              className={`text-sm font-bold flex items-center gap-2 ${
+              className={classNames(
+                "text-sm font-bold flex items-center gap-2",
                 activeLesson ? "text-white" : "text-orange-500"
-              }`}
+              )}
             >
               <Lock size={20} weight="bold" />
-              Em breve
+              {LESSON.comingSoonLesson}
             </p>
           )}
           <span
@@ -61,13 +66,14 @@ export const LessonComponent: React.FC<LessonComponentsProps> = ({
                 : "text-green-300 border-green-300"
             }`}
           >
-            {type === "live" ? "AO VIVO" : "AULA PRÁTICA"}
+            {type === "live" ? LESSON.liveLesson : LESSON.classLesson}
           </span>
         </header>
         <strong
-          className={`text-base font-bold ${
+          className={classNames(
+            "text-base font-bold",
             activeLesson ? "text-white" : "text-grey-200"
-          }`}
+          )}
         >
           {title}
         </strong>

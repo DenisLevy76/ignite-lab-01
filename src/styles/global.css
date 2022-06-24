@@ -7,14 +7,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   @apply w-2;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   @apply bg-transparent;
 }
 
-body::-webkit-scrollbar-thumb {
-  @apply bg-grey-600 rounded border;
+*::-webkit-scrollbar-thumb {
+  @apply bg-grey-600 rounded;
+  border-left: 1px solid black;
 }

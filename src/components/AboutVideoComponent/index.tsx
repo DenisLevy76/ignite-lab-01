@@ -3,6 +3,7 @@ import { GetLessonBySlugResponse } from "../../pages/EventPage/types";
 import { ExtensionLinkComponent } from "../ExtensionLinkComponent";
 import { LinkButtonComponent } from "../LinkButtonComponent";
 import { TeacherInfoComponent } from "../TeacherInfoComponent";
+import { AboutVideo } from "../../settings/ptbr/AboutVideo";
 
 export const AboutVideoComponent: React.FC<{
   data: GetLessonBySlugResponse;
@@ -24,23 +25,24 @@ export const AboutVideoComponent: React.FC<{
         </div>
         <div className="flex flex-col gap-4">
           <LinkButtonComponent variant="primary" href="#">
-            <DiscordLogo size={24} weight="bold" /> COMUNIDADE NO DISCORD
+            <DiscordLogo size={24} weight="bold" /> {AboutVideo.discordButton}
           </LinkButtonComponent>
           <LinkButtonComponent variant="outlined" href="#">
             <Lightning size={24} weight="bold" />
-            ACESSE O DESAFIO
+            {AboutVideo.challengeButton}
           </LinkButtonComponent>
         </div>
       </section>
       <div className="flex flex-col lg:flex-row gap-6">
         <ExtensionLinkComponent
           icon={<FileArrowDown size={20} weight="bold" />}
-          title="Material complementar"
-          description="Acesse o material complementar para acelerar o seu desenvolvimento"
+          title={AboutVideo.externalLinkI.title}
+          description={AboutVideo.externalLinkI.description}
         />
         <ExtensionLinkComponent
           icon={<FileArrowDown size={20} weight="bold" />}
-          title="Material complementar"
+          title={AboutVideo.externalLinkII.title}
+          description={AboutVideo.externalLinkII.description}
         />
       </div>
     </article>
