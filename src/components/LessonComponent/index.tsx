@@ -25,7 +25,7 @@ export const LessonComponent: React.FC<LessonComponentsProps> = ({
       className="flex flex-col gap-2 group relative"
     >
       {activeLesson ? (
-        <div className="w-6 h-6 bg-green-500 absolute -left-1 top-1/2 rounded-sm rotate-45"></div>
+        <div className="w-6 h-6 bg-green-500 absolute -left-1 top-1/2 translate-y-1 rounded-sm rotate-45"></div>
       ) : (
         <></>
       )}
