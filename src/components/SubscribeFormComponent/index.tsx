@@ -1,34 +1,20 @@
-import { gql, useMutation } from "@apollo/client";
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  useCreateSubscriberMutation,
+  usePublishSubscriberMutation,
+} from "../../graphql/generated";
 import { InputComponent } from "../InputComponent";
-
-const CREATE_SUBSCRIBER_MUTATION = gql`
-  mutation CreateSubscriber($name: String!, $email: String!) {
-    createSubscriber(data: { name: $name, email: $email }) {
-      id
-    }
-  }
-`;
-
-const PUBLISH_SUBSCRIBER = gql`
-  mutation PublishSubscriber($email: String!) {
-    publishSubscriber(where: { email: $email }) {
-      id
-    }
-  }
-`;
 
 export const SubscribeFormComponent: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const [createSubscriber, { data, loading: createLoad }] = useMutation<{
-    id: string;
-  }>(CREATE_SUBSCRIBER_MUTATION);
-  const [publishSubscriber, { loading: publishLoad }] = useMutation<{
-    subscriberId: string;
-  }>(PUBLISH_SUBSCRIBER);
+  const [createSubscriber, { loading: createLoad, data }] =
+    useCreateSubscriberMutation();
+  const [publishSubscriber, { loading: publishLoad }] =
+    usePublishSubscriberMutation();
+
   const navigate = useNavigate();
 
   const handleSubscribe = async (event: FormEvent) => {
@@ -40,17 +26,17 @@ export const SubscribeFormComponent: React.FC = () => {
         email,
       },
     });
-
-    navigate("/event");
   };
 
   useEffect(() => {
-    data &&
+    if (data) {
       publishSubscriber({
         variables: {
           email: email,
         },
       });
+      navigate("/event");
+    }
   }, [data]);
 
   return (

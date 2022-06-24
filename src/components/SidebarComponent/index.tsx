@@ -1,22 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
+import { useGetLessonsQuery } from "../../graphql/generated";
 import { LessonComponent } from "../LessonComponent";
-import { LessonRequestData } from "./types";
-
-const GET_LESSONS_QUERY = gql`
-  query {
-    lessons {
-      id
-      title
-      availableAt
-      slug
-      lessonType
-    }
-  }
-`;
 
 export const SidebarComponent: React.FC = () => {
-  const { data } = useQuery<LessonRequestData>(GET_LESSONS_QUERY);
+  const { data } = useGetLessonsQuery();
   const { slug } = useParams();
   return (
     <aside className="hidden md:block min-w-[348px] max-h-[1190px] bg-grey-700 p-6 border-l border-grey-600 overflow-y-scroll">
