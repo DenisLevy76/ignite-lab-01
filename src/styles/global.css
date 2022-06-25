@@ -19,3 +19,12 @@ body {
   @apply bg-grey-600 rounded;
   border-left: 1px solid black;
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: yellow;
+}
+
+::selection {
+  @apply bg-green-500 text-white;
+}
