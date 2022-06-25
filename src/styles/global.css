@@ -26,5 +26,5 @@ body {
 }
 
 ::selection {
-  @apply bg-green-500 text-white;
+  @apply bg-green-700 text-white;
 }
